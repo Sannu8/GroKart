@@ -1,0 +1,63 @@
+@import './Variables.less';
+
+//NameSpaces
+#colors() {
+  primary: blue;
+  secondary: lightblue;
+  tertiary: cyan;
+}
+
+//NameSpaces
+#styles() {
+  .button {
+    display: block;
+    background-color: #colors[secondary]; //mapping values
+    border: 1px solid #colors[primary]; //mapping values
+    &:hover {background-color: #colors[tertiary];} //mapping values
+  }
+  .radio {display: none}
+  .checkbox {display:none}
+
+}
+
+//escaping
+@min: (min-width: 480px);
+
+.border{
+  border-bottom: solid 2px @color;
+  @color: black;
+}
+
+@color: red;
+
+.App {
+  background-color: lightgrey;
+
+  header {
+    height: @height;
+    margin-left: @margin;
+    .border();
+
+    //nesting and commenting
+    &:hover {
+      background-color: grey;
+    } 
+    @media @min {
+      width: 50%;
+
+      /*Nested at rules and comments */
+      @media (max-width: 720px) {
+        background-color: blue;
+      }
+    }
+  }
+
+  .sign {
+    color: red;
+
+    //Accessors
+    #styles.button();
+  }
+  
+}
+

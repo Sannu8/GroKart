@@ -1,28 +1,34 @@
+.border {
+  border-bottom: solid 2px black;
+}
 .App {
-  text-align: center;
+  background-color: lightgrey;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App header {
+  height: 50px;
+  margin-left: 0px;
+  border-bottom: solid 2px black;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.App header:hover {
+  background-color: grey;
 }
-
-.App-title {
-  font-size: 1.5em;
+@media (min-width: 480px) {
+  .App header {
+    width: 50%;
+    /*Nested at rules and comments */
+  }
 }
-
-.App-intro {
-  font-size: large;
+@media (min-width: 480px) and (max-width: 720px) {
+  .App header {
+    background-color: blue;
+  }
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.App .sign {
+  color: red;
+  display: block;
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+.App .sign:hover {
+  background-color: cyan;
 }
